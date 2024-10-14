@@ -12,14 +12,12 @@
 
 // # RACCOLTA DATI
 // * chiedo all'utente il numero di chilometri che vuole percorrere e lo trasformo in numero
-const userKmNum = prompt(
-  "Inserisci il numero di chilometri che vuoi percorrere"
+const userKmNum = parseInt(
+  prompt("Inserisci il numero di chilometri che vuoi percorrere")
 );
-console.log(userKmNum);
 
 // * chiedo all'utente l'età del passeggero e la trasformo in numero
-const passengerAge = prompt("Inserisci l'età del passeggero");
-console.log(passengerAge);
+const passengerAge = parseInt(prompt("Inserisci l'età del passeggero"));
 
 // * segno il prezzo del biglietto al km
 const ticketPriceKm = 0.21;
@@ -28,15 +26,32 @@ const ticketPriceKm = 0.21;
 let finalPriceMessage;
 
 // * variabile sconti
-// const saleUnder = "20%";
-// const saleOver = "40%";
+let appliedSale;
 
 // # ELABORAZIONE
 // * controllo che il numero di chilometri inserito sia valido
-// * controllo che l'età del passeggero inserita sia valida
+const isUserKmNumValid = !isNaN(userKmNum) && !userKmNum <= 0;
 
-// * SE i dati inseriti sono validi AND l'età è minore di 18
-// calcolo prezzo biglietti con sconto del 20%
+// * controllo che l'età del passeggero inserita sia valida
+const isPassengerAgeValid = !isNaN(passengerAge) && !passengerAge <= 0;
+
+// * controllo se si applicano sconti per l'età
+const isSaleUnderValid = passengerAge < 18;
+const isSaleOverValid = passengerAge >= 65;
+
+// * SE i dati inseriti sono validi
+if (isUserKmNumValid && isPassengerAgeValid) {
+  // calcolo prezzo totale
+  let totalPrice = userKmNum * 0.21;
+
+  // * SE l'età è minore di 18
+  if (isSaleUnderValid) {
+    // calcolo sconto
+    appliedSale = (totalPrice * 20) / 100;
+    // calcolo prezzo biglietti
+    finalPriceMessage = totalPrice - appliedSale;
+  }
+}
 // * ALTRIMENTI SE i dati inseriti sono validi AND l'età è maggiore uguale a 65
 // calcolo prezzo biglietti con sconto del 40%
 // * ALTRIMENTI SE i dati inseriti sono validi AND l'età è compresa tra 18 e 65
@@ -46,3 +61,14 @@ let finalPriceMessage;
 
 // # OUTPUT
 // * prezzo finale con due decimali
+
+console.log(`
+userKmNum : ${userKmNum}
+passengerAge : ${passengerAge}
+ticketPriceKm : ${ticketPriceKm}
+finalPriceMessage : ${finalPriceMessage}
+saleUnder : ${saleUnder}
+saleOver : ${saleOver}
+isUserKmNumValid : ${isUserKmNumValid}
+isPassengerAgeValid : ${isPassengerAgeValid}
+`);
