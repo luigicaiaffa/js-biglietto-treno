@@ -11,6 +11,11 @@
 // ! PROCEDURA
 
 // # RACCOLTA DATI
+// * chiedo all'utente il numero di chilometri che vuole percorrere e lo trasformo in numero
+// * chiedo all'utente l'eta del passeggero e la trasformo in numero
+// * segno il prezzo del biglietto al km
+// * preparo una variabile per il messaggio
+// * variabile sconti
 
 // # ELABORAZIONE
 
