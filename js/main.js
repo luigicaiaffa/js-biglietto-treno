@@ -65,16 +65,18 @@ if (isUserKmNumValid && isPassengerAgeValid) {
   }
 
   // calcolo prezzo biglietti finale
-  finalPriceMessage = totalPrice - appliedSale;
+  finalPriceMessage = (totalPrice - appliedSale).toFixed(2) + " €";
 }
+
 // * ALTRIMENTI
 else {
   // messaggio di errore
-  alert("dati inseriti incorrettamente");
+  alert("Dati inseriti incorrettamente");
 }
 
 // # OUTPUT
 // * prezzo finale con due decimali
+alert(finalPriceMessage);
 
 // * debug console
 console.log(`
