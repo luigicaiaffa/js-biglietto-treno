@@ -12,11 +12,23 @@
 
 // # RACCOLTA DATI
 // * chiedo all'utente il numero di chilometri che vuole percorrere e lo trasformo in numero
-// * chiedo all'utente l'eta del passeggero e la trasformo in numero
+// * chiedo all'utente l'età del passeggero e la trasformo in numero
 // * segno il prezzo del biglietto al km
-// * preparo una variabile per il messaggio
+// * preparo una variabile per il prezzo finale
 // * variabile sconti
 
 // # ELABORAZIONE
+// * controllo che il numero di chilometri inserito sia valido
+// * controllo che l'età del passeggero inserita sia valida
+
+// * SE i dati inseriti sono validi AND l'età è minore di 18
+// calcolo prezzo biglietti con sconto del 20%
+// * ALTRIMENTI SE i dati inseriti sono validi AND l'età è maggiore uguale a 65
+// calcolo prezzo biglietti con sconto del 40%
+// * ALTRIMENTI SE i dati inseriti sono validi AND l'età è compresa tra 18 e 65
+// calcolo prezzo biglietti senza sconto
+// * ALTRIMENTI
+// messaggio di errore
 
 // # OUTPUT
+// * prezzo finale con due decimali
