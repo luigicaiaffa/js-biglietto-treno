@@ -12,10 +12,24 @@
 
 // # RACCOLTA DATI
 // * chiedo all'utente il numero di chilometri che vuole percorrere e lo trasformo in numero
+const userKmNum = prompt(
+  "Inserisci il numero di chilometri che vuoi percorrere"
+);
+console.log(userKmNum);
+
 // * chiedo all'utente l'età del passeggero e la trasformo in numero
+const passengerAge = prompt("Inserisci l'età del passeggero");
+console.log(passengerAge);
+
 // * segno il prezzo del biglietto al km
+const ticketPriceKm = 0.21;
+
 // * preparo una variabile per il prezzo finale
+let finalPriceMessage;
+
 // * variabile sconti
+// const saleUnder = "20%";
+// const saleOver = "40%";
 
 // # ELABORAZIONE
 // * controllo che il numero di chilometri inserito sia valido
