@@ -71,7 +71,7 @@ if (isUserKmNumValid && isPassengerAgeValid) {
 // * ALTRIMENTI
 else {
   // messaggio di errore
-  alert("Dati inseriti incorrettamente");
+  finalPriceMessage = "Dati inseriti incorrettamente";
 }
 
 // # OUTPUT
